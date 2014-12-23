@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Header</title>
+</head>
+<body bgcolor="blue" style="height: 25%; width: 100%;">
+
+
+<table>
+<td></td>
+</table>
+<h1 style="text-align: center; color: white;"><b>Online Quiz</b></h1>
+
+</body>
+</html>

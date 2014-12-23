@@ -1,0 +1,5 @@
+package com.onlineQuiz.database;
+
+public class Connection {
+
+}

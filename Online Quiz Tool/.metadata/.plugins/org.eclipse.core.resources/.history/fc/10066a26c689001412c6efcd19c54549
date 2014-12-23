@@ -1,0 +1,5 @@
+package com.onlineQuiz.user;
+
+public class User {
+
+}
