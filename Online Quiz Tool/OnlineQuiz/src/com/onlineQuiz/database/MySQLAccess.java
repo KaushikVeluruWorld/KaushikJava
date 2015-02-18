@@ -19,16 +19,17 @@ public class MySQLAccess {
 	  
 	  try
 	  {
-		  Class.forName("com.mysql.jdbc.Driver");
+		  Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
 		  //set up the connection with DB
 		  System.out.println("connecting to database");
-		  connection=DriverManager.getConnection("jdbc:mysql://localhost:3306/new_schema1","root","root");
+		  connection=DriverManager.getConnection("jdbc:sqlserver://localhost:1433;databaseName=onlinequiz;username=kaushikveluru;password=12345");
 		  System.out.println("connection established!!");
 		 
 	  }
 	  catch(Exception e)
 	  {
 		  e.printStackTrace();
+		  return null;
 	  }
 	  
 	  return connection;

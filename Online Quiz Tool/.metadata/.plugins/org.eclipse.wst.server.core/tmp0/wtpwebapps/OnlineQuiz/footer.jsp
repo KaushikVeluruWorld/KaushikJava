@@ -10,6 +10,7 @@
 <body  style="height: 50px; width: 100%;">
 
 <p align="center" style="color: white" >
+
 <a style="" href="home.jsp">Home </a> |
 <a href="ContactUs.html">Contact Us </a> |
 <a href="FAQ.html">FAQ </a>

@@ -17,13 +17,19 @@ Login l=new Login();
 
 if(l.login(request.getParameter("username"), request.getParameter("password")))
 {
-	out.println("Welcome, "+request.getParameter("username"));
-}
+	out.println("Welcome, "+request.getParameter("username")); 
+	session.setAttribute("username", request.getParameter("username"));%>
+	
+	<jsp:forward page="createQuiz.jsp"></jsp:forward>
+	
+<%}
 else 
 {
 	out.println("Username or password is incorrect");
 }
    %>
+
 <jsp:include page="footer.jsp"></jsp:include>
+
 </body>
 </html>

@@ -19,11 +19,11 @@ public class Login extends MySQLAccess {
 			 connection=getConnection();
 			 if(connection!=null)
 			 {
-				 System.out.println("connection established");
+				 System.out.println("befor error");
 				 //create a statement
 				  Statement st=connection.createStatement();
-				  ResultSet rs=st.executeQuery("select * from login");
-				  
+				  ResultSet rs=st.executeQuery("select * from onlinequiz.dbo.login");
+				  System.out.println("after error");
 				  while(rs.next())
 				  {
 					  System.out.println("username from database: "+rs.getString("username"));
@@ -42,11 +42,14 @@ public class Login extends MySQLAccess {
 				
 				 connection.close();
 			 }
+			 else
+				 return reply;
 
 		}
 		catch(Exception e)
 		{
 			e.printStackTrace();
+			return reply;
 		}
 		return reply;
 	}
