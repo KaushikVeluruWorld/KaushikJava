@@ -4,14 +4,21 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Create New Quiz</title>
+<script>
+
+</script>
 </head>
 <body>
 
 <jsp:include page="header.jsp"></jsp:include>
 <form action="viewQuiz.jsp" method="GET">
 Quiz Name: <input name="quizname" type="text"></input> <br/>
+No of Questions: <input name="QuizSize" type="text"></input><br/>
+
 Question 1: <input type="text" name="qn1" value="enter your question.."/><br/>
+
+
 
 <input type="submit" value="Create Quiz">
 </form>

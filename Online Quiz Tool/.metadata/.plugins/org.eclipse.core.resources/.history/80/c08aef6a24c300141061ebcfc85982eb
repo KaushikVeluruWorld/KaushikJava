@@ -1,0 +1,38 @@
+package com.onlineQuiz.database;
+
+import java.sql.Connection;
+import java.sql.*;
+
+import com.mysql.jdbc.Statement;
+
+public class loginCheck extends MySQLAccess{
+
+	
+	public boolean login(String username,String password)
+	{
+		try
+		{
+			Connection conn=getConnection();
+			java.sql.Statement statement=conn.createStatement();
+			String sql="Select username, password from users";
+			ResultSet rs=statement.executeQuery(sql);
+			while(rs.next())
+			{
+				System.out.println("here");
+			}
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		
+		return false;
+	}
+	
+	//test
+	public static void main(String args[])
+	{
+		
+	}
+	
+}

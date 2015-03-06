@@ -1,0 +1,83 @@
+
+
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Connection.*;
+import java.util.Scanner;
+
+public class MovieDatabase {
+  
+	static Connection connection=null;
+  static PreparedStatement ps=null;
+  static java.sql.Statement st=null;
+  static ResultSet rs=null;
+  
+  public Connection getConnection() throws Exception
+  {
+	  
+	  try
+	  {
+		  Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+		  //set up the connection with DB
+		  System.out.println("connecting to database");
+		  connection=DriverManager.getConnection("jdbc:sqlserver://localhost:1433;databaseName=movies;username=kaushikveluru;password=12345");
+		  System.out.println("connection established!!");
+		 
+	  }
+	  catch(Exception e)
+	  {
+		  e.printStackTrace();
+		  return null;
+	  }
+	  
+	  return connection;
+	
+  }
+  
+  public static void main(String[] args)
+  {
+	 MovieDatabase mdb=new MovieDatabase();
+	  try {
+		 connection=mdb.getConnection();
+		
+	} catch (Exception e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+	  
+	  
+	 Scanner sc=new Scanner(System.in);
+	 while(true)
+	 {
+		 System.out.println("Enter your choice: 1. Browse Movies \n 2. Add Movies \n "
+		 		+ "3. Search Movies by Movie Name \n 4. Quit");
+		 int option=sc.nextInt();
+		 
+		 switch(option)
+		 {
+		 case 1:
+			 mdb.getMovies();
+			 break;
+		 case 2: 
+			 mdb.addMovie();
+			 break;
+		 case 3: break;
+		 case 4: 
+			 System.exit(0);
+			 break;
+		 default:
+			 System.out.println("invalid option");
+			 break;
+		 }
+		 
+		 
+	 }
+	  
+	  
+	  
+  }
+	
+}
