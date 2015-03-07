@@ -8,10 +8,22 @@ public class Racer implements Runnable {
 		for(int i=1;i<=100;i++)
 		{
 			System.out.println("Distance covered by "+Thread.currentThread().getName()+":"+i);
+			
+			try
+			{
+				if((i==30)&&(Thread.currentThread().getName().equals("hare")))
+					Thread.sleep(1000*10);
+					
+			}
+			catch(InterruptedException e)
+			{
+				e.printStackTrace();
+			}
+			
 			if(this.isRaceWon(i))
 			{
 			
-				break;
+//				/break;
 			}
 		}
 	}
